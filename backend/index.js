@@ -5,6 +5,9 @@ const cors = require('cors'); // Import the cors package
 const app = express();
 const port = 3000;
 
+
+app.use(cors()); // Allow all origins
+
 // Use CORS middleware to enable CORS for all routes
 app.use(cors());
 
@@ -50,6 +53,11 @@ app.delete('/api/posts/:id', (req, res) => {
     posts = posts.filter(p => p.id !== postId); // Remove post by ID
     res.status(204).send(); // Respond with 204 No Content
 });
+
+app.use(cors({
+    origin: 'https://charttanong.github.io'
+}));
+
 
 // Start the server
 app.listen(port, () => {

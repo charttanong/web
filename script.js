@@ -1,4 +1,4 @@
-const apiUrl = 'http://localhost:3000/api/posts';
+const apiUrl =  'https://charttanongapp-fbaf783e33a7.herokuapp.com';
 
 // Function to fetch and display posts
 async function fetchPosts() {
