@@ -6,13 +6,16 @@ const app = express();
 const port = 3000;
 
 
-app.use(cors()); // Allow all origins
+fetch('https://charttanongapp-fbaf783e33a7.herokuapp.com/', {
+  mode: 'no-cors'
+})
+.then(response => {
+  // Handle response
+})
+.catch(error => {
+  console.error('Error:', error);
+});
 
-// Use CORS middleware to enable CORS for all routes
-app.use(cors());
-
-// Middleware to parse JSON requests
-app.use(express.json());
 
 let posts = []; // In-memory array to hold posts
 
